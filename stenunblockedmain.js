@@ -162,3 +162,5 @@ if (hueModeTxt) {
 
 if (_hueMode)
   hueModeLoop();
+
+document.title = document.title.replaceAll("Sten", "Sug kuk");
