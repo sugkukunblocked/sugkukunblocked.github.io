@@ -14,14 +14,6 @@
   <script src="stenunblockedmain.js"></script>
 <link rel="icon" href="stennerela.jpg">
   <style>
-.chrismanhat {
-	z-index: 100;
-    position: absolute;
-    left: 50%;
-    width: 110px;
-    height: 110px;
-    transform: translate(-50%, 50px);
-}
 h1 {
 	font-family: Arial;
     text-align: center;
@@ -123,7 +115,6 @@ div.cookieContainer {
     <h3 style="font-family:Arial;"><a href="/privacy-policy/">Privacy Policy</a></h3></center>
 </div></div>
 
-<img src="https://5.imimg.com/data5/SELLER/Default/2022/11/MM/ZO/TA/154638865/4-2-christmas-hat-png-hd-500x500.png" class="chrismanhat" id="chrismanhat" style="display:none"></img>
 <img src="stennerela.jpg"></img>
 <br><br><br><br><br><br>
 <hr>
@@ -215,7 +206,7 @@ if (getCookie("lastSorting")==="") {
 }
 
 function getAllLikes(cb) {
-	let url = 'https://stenunblockedserver.stensjogren.repl.co/like?game=all';
+	let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=all';
     const xml = new XMLHttpRequest();
     xml.open("GET", url, true);
 
@@ -229,7 +220,7 @@ function getAllLikes(cb) {
     }});
 }
 function getLikes(game, cb) {
-	let url = 'https://stenunblockedserver.stensjogren.repl.co/like?game=' + encodeURIComponent(game);
+	let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=' + encodeURIComponent(game);
     const xml = new XMLHttpRequest();
     xml.open("GET", url, true);
 
@@ -253,7 +244,7 @@ function likez(game, cb) {
         return;
     }
 	
-    let url = 'https://stenunblockedserver.stensjogren.repl.co/like?game=' + encodeURIComponent(game);
+    let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=' + encodeURIComponent(game);
     const xml = new XMLHttpRequest();
     xml.open("POST", url, true);
     xml.send(null);
@@ -313,12 +304,15 @@ var games = [
   ["/gun-spin/", "Gun Spin"],
   ["/overkill-apache/", "Overkill Apache"],
   ["/neon-pong/", "Neon Pong"],
-  ["/drift-hunters/second_mirror.html", "Drift Hunters (2nd Mirror)"],
+  ["/drift-hunters/second_mirror.html", "Drift Hunters (2nd Link)"],
   ["/time-shooter-2/", "Time Shooter 2"],
   ["/jacksmith/", "Jacksmith"],
   ["/stunt-master/", "City Car Driving Simulator: Stunt Master"],
-  ["/roblox/", "Roblox Unblocked"],
-  ["/drift-hunters/third_miror.html", "Drift Hunters (3rd Mirror)"]
+  ["/drift-hunters/third_miror.html", "Drift Hunters (3rd Link)"],
+  ["/fruit-merge/", "Fruit Merge"],
+  ["/gold-digger/", "Gold Digger FRVR"],
+  ["/bitlife/", "BitLife Life Simulator"],
+  ["/moto-run/frame.html", "Moto Traffic Run 3D [BETA]"]
 ];
 var games_original = games.slice();
 games_original.reverse();
@@ -423,7 +417,7 @@ function sort_def() {
 }
 sort_def(); // när servern är avstängd
 var likes = getAllLikes(function(_likes) {
-  let url = 'https://stenunblockedserver.stensjogren.repl.co/like?game=all';
+  let url = 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/like?game=all';
   likes = _likes;
 let ss = getCookie("lastSorting");
 let sortcon = document.getElementById("sort-container");
@@ -471,7 +465,7 @@ else if (enabled == "0") {
 <script>
 (function(){
   let xml = new XMLHttpRequest();
-  xml.open('POST', 'https://stenunblockedaktieapi--geometrysten.repl.co/view-game', true);
+  xml.open('POST', 'https://stenunblockedserver-c3acd8e9110f.herokuapp.com/views/view-game', true);
   xml.send(null);
 })();
 </script>
@@ -489,11 +483,11 @@ else if (enabled == "0") {
 </center>
 -->
 <br>
-<script>
+<!--<script>
 var chrismashat = document.getElementById("chrismanhat");
 var allowed = ["stenblocked2", "stenblocked", "stenunblocked"];
 if (allowed.includes(window.location.host.split(".")[0].toLowerCase()))
 	chrismashat.style.display = '';
-</script>
+</script>-->
 </body>
 </html>
